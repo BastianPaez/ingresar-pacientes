@@ -29,6 +29,7 @@ function recopilarDatos(e){
     const propietario = rellenarPropietario(mascota)
     console.log(propietario)
     propietario.datosPropietarios();
+    formulario.reset();
 }
 
 
