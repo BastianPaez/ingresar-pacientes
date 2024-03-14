@@ -61,10 +61,4 @@ function rellenarPropietario(mascota){
     return propietario
 }
 
-function imprimirHTML(){
-    const divLista = document.createElement('div');
-    divLista.classList.add('list-group-item d-flex justify-content-between align-items-center');
-    const li = document.createElement('li');
-    li.textContent = `Mascota`
-}
 
