@@ -20,6 +20,14 @@ export class Propietario {
     }
 
     datosPropietarios(){
-
+        const divLista = document.createElement('div');
+        divLista.classList.add('list-group-item', 'bg-success', 'text-start');
+        const li1 = document.createElement('li');
+        li1.textContent = `El nombre del dueño es: ${this.nombre}. El domicilio es: ${this.direccion}, y el número telefónico de contacto: ${this.telefono}`;
+        const li2 = document.createElement('li');
+        li2.textContent = `El tipo de animal es un: ${this.mascota.tipo}, mientras que el nombre de la mascota es: ${this.mascota.nombre} y la enfermedad es: ${this.mascota.motivoConsulta}`
+        divLista.appendChild(li1)
+        divLista.appendChild(li2)
+        document.querySelector('#resultado ul').appendChild(divLista)
     }
 }

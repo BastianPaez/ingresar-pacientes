@@ -5,9 +5,7 @@ import {Propietario} from './propietario.js';
 
 //variables
 const formulario = document.querySelector('#formulario');
-const tipos = document.querySelectorAll('#tipo option')
-
-
+const inputs = document.querySelectorAll('#formulario input')
 
 eventListeners();
 function eventListeners(){
@@ -21,12 +19,28 @@ function eventListeners(){
 function recopilarDatos(e){
     e.preventDefault();
     
+    validacion();
+    if (document.querySelector('.is-invalid')) {
+        return;
+    }
+    
     const mascota = rellenarMascota();
+    mascota.getmotivoConsulta
     const propietario = rellenarPropietario(mascota)
     console.log(propietario)
+    propietario.datosPropietarios();
 }
 
 
+function validacion(){
+    inputs.forEach( input =>{
+        input.classList.remove('is-invalid', 'is-valid')
+        if (input.value === ''){
+            input.classList.add('is-invalid')
+            return
+        }
+    })
+}
 //tomamos los datos de la mascota en el form e instanciamos los objetos
 function rellenarMascota(){
     const mascota = new Mascota();
@@ -45,5 +59,12 @@ function rellenarPropietario(mascota){
     propietario.setTelefono = document.querySelector('#telefono').value;
     propietario.setMascota = mascota;
     return propietario
+}
+
+function imprimirHTML(){
+    const divLista = document.createElement('div');
+    divLista.classList.add('list-group-item d-flex justify-content-between align-items-center');
+    const li = document.createElement('li');
+    li.textContent = `Mascota`
 }
 

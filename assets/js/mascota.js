@@ -7,7 +7,10 @@ export class Mascota {
     get getNombre(){
         return this.nombre;
     }
-    get getmotivoConsulta(){
+    get getTipo(){
+        return this.tipo;
+    }
+    get getMotivoConsulta(){
         return this.motivoConsulta;
     }
 
