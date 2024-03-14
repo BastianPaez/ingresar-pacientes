@@ -4,6 +4,10 @@ export class Especie{
     }
 
     get getTipo(){
-        return `El tipo de animal es un: ${this.Tipo}`;
+        return `El tipo de animal es un ${this.Tipo}`;
+    }
+
+    set setTipo(value){
+        this.Tipo = value;
     }
 }
